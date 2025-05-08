@@ -2,13 +2,28 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     background-color: #FAF4DB;
-  }
-  header, footer {
+}
+
+header {
     background-color: #FAF4DB;
+    color:black;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color:black;
     color: white;
     text-align: center;
-  }
-  main {
-    padding: 2em;
-  }
+}
