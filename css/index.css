@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF4DB;
+  }
+  header, footer {
+    background-color: #FAF4DB;
+    color: white;
+    text-align: center;
+  }
+  main {
+    padding: 2em;
+  }
