@@ -14,8 +14,29 @@ header {
 }
 
 main {
-    padding: 2em;
+    padding: 3%;
 }
+
+h1, p {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+h1 {
+    color: #000000;
+    font-size: 3.5em;
+    font-weight: 1000;
+}
+p {
+    color: #6f6f6f;
+    font-weight: 700;
+}
+h1.visible, p.visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
 
 section {
     margin-top: 50px;
@@ -26,4 +47,45 @@ footer {
     background-color:black;
     color: white;
     text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+    width: 500px;        /* 每張圖片固定寬度 */
+    height: auto;        /* 高度自動保持比例 */
+    object-fit: cover;   /* 或用 contain 根據需要 */
+    margin-right: 10px;  /* 圖與圖之間有間距 */
+    flex-shrink: 0;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 0 0.5em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
 }
