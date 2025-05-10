@@ -1,33 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let currentIndex = 0;
-  const track = document.getElementById('carouselTrack');
-  const container = document.querySelector('.carousel-container');
+  const carousels = document.querySelectorAll('[data-carousel]');
 
-  // 等圖片載入完後再取得寬度
-  const updateSlide = () => {
-    const images = track.querySelectorAll('img');
-    if (images.length === 0) return;
+  carousels.forEach(container => {
+    let currentIndex = 0;
+    const track = container.querySelector('.carousel-track');
+    const leftBtn = container.querySelector('.arrow.left');
+    const rightBtn = container.querySelector('.arrow.right');
 
-    const imageWidth = images[0].getBoundingClientRect().width;
-    const visibleCount = Math.floor(container.offsetWidth / imageWidth);
-    const totalImages = images.length;
-    const maxIndex = totalImages - visibleCount;
+    const updateSlide = () => {
+      const images = track.querySelectorAll('img');
+      const imageWidth = images[0].getBoundingClientRect().width;
+      const visibleCount = Math.floor(container.offsetWidth / imageWidth);
+      const maxIndex = images.length - visibleCount;
 
-    // 修正 currentIndex 超過邊界時重設
-    if (currentIndex > maxIndex) currentIndex = 0;
-    if (currentIndex < 0) currentIndex = maxIndex;
+      if (currentIndex > maxIndex) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = maxIndex;
 
-    track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-  };
+      track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+    };
 
-  window.moveSlide = function (direction) {
-    currentIndex += direction;
-    updateSlide();
-  };
+    leftBtn.addEventListener('click', () => {
+      currentIndex--;
+      updateSlide();
+    });
 
-  // 初始化
-  window.addEventListener('resize', updateSlide); // RWD 時重算寬度
-  window.addEventListener('load', updateSlide);   // 頁面一開始也要執行一次
+    rightBtn.addEventListener('click', () => {
+      currentIndex++;
+      updateSlide();
+    });
+
+    window.addEventListener('resize', updateSlide);
+    window.addEventListener('load', updateSlide);
+  });
 });
 
 //h1和p的文字效果
