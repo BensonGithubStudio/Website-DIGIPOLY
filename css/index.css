@@ -103,3 +103,20 @@ footer {
 .arrow.right {
     right: 10px;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        color: #000000;
+        letter-spacing: 3px;
+        font-size: 2.5em;
+        font-weight: 1000;
+    }
+    p {
+        color: #6f6f6f;
+        font-weight: 700;
+    }
+
+    .carousel-track img {
+        width: 250px;        /* 每張圖片固定寬度 */
+    }
+}
