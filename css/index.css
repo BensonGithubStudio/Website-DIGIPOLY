@@ -60,7 +60,10 @@ footer {
 .carousel-track {
     display: flex;
     transition: transform 0.3s ease;
-}
+    touch-action: pan-y;
+    user-select: none;
+    will-change: transform;
+  }
 
 .carousel-track img {
     width: 500px;        /* 每張圖片固定寬度 */

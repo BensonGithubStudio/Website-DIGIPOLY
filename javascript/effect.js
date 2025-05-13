@@ -4,59 +4,109 @@ document.addEventListener("DOMContentLoaded", function () {
   carousels.forEach(container => {
     let currentIndex = 0;
     const track = container.querySelector('.carousel-track');
+    const images = track.querySelectorAll('img');
     const leftBtn = container.querySelector('.arrow.left');
     const rightBtn = container.querySelector('.arrow.right');
-  
+
+    let imageWidth = images[0].getBoundingClientRect().width;
+    let isDragging = false;
     let startX = 0;
-    let endX = 0;
-  
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+    let autoSlideInterval;
+
+    const visibleCount = () => Math.floor(container.offsetWidth / imageWidth);
+    const maxIndex = () => images.length - visibleCount();
+
     const updateSlide = () => {
-      const images = track.querySelectorAll('img');
-      const imageWidth = images[0].getBoundingClientRect().width;
-      const visibleCount = Math.floor(container.offsetWidth / imageWidth);
-      const maxIndex = images.length - visibleCount;
-  
-      if (currentIndex > maxIndex) currentIndex = 0;
-      if (currentIndex < 0) currentIndex = maxIndex;
-  
-      track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+      imageWidth = images[0].getBoundingClientRect().width;
+      snapTo(currentIndex);
     };
-  
-    leftBtn.addEventListener('click', () => {
-      currentIndex--;
-      updateSlide();
-    });
-  
-    rightBtn.addEventListener('click', () => {
-      currentIndex++;
-      updateSlide();
-    });
-  
-    // 手機滑動事件
-    track.addEventListener('touchstart', e => {
+
+    const setSliderPosition = () => {
+      track.style.transform = `translateX(${currentTranslate}px)`;
+    };
+
+    const animation = () => {
+      setSliderPosition();
+      if (isDragging) requestAnimationFrame(animation);
+    };
+
+    const snapTo = (index) => {
+      const max = maxIndex();
+      currentIndex = Math.min(Math.max(index, 0), max);
+      currentTranslate = prevTranslate = -currentIndex * imageWidth;
+      track.style.transition = "transform 0.3s";
+      setSliderPosition();
+    };
+
+    const nextSlide = () => snapTo(currentIndex + 1);
+    const prevSlide = () => snapTo(currentIndex - 1);
+
+    // Mouse / touch events
+    track.addEventListener("touchstart", touchStart);
+    track.addEventListener("touchmove", touchMove);
+    track.addEventListener("touchend", touchEnd);
+
+    function touchStart(e) {
+      isDragging = true;
       startX = e.touches[0].clientX;
+      track.style.transition = "none";
+      cancelAnimationFrame(animationID);
+      animationID = requestAnimationFrame(animation);
+    }
+
+    function touchMove(e) {
+      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const dx = currentX - startX;
+      currentTranslate = prevTranslate + dx;
+    }
+
+    function touchEnd() {
+      isDragging = false;
+      cancelAnimationFrame(animationID);
+      const movedBy = currentTranslate - prevTranslate;
+
+      if (movedBy < -50) currentIndex++;
+      else if (movedBy > 50) currentIndex--;
+
+      snapTo(currentIndex);
+      resetAutoSlide();
+    }
+
+    // Buttons
+    leftBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
     });
-  
-    track.addEventListener('touchmove', e => {
-      endX = e.touches[0].clientX;
+
+    rightBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
     });
-  
-    track.addEventListener('touchend', () => {
-      const diff = endX - startX;
-      if (Math.abs(diff) > 50) { // 滑動門檻
-        if (diff < 0) {
-          currentIndex++;
-        } else {
-          currentIndex--;
-        }
-        updateSlide();
-      }
-    });
-  
+
+    // Auto slide
+    const startAutoSlide = () => {
+      autoSlideInterval = setInterval(() => {
+        nextSlide();
+      }, 4000);
+    };
+
+    const resetAutoSlide = () => {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    };
+
     window.addEventListener('resize', updateSlide);
-    window.addEventListener('load', updateSlide);
+    window.addEventListener('load', () => {
+      updateSlide();
+      startAutoSlide();
+    });
   });
 });
+
 
 //h1和p的文字效果
 document.addEventListener("DOMContentLoaded", function () {
