@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let prevTranslate = 0;
     let animationID;
     let autoSlideInterval;
+    let isInView = false;
 
     const visibleCount = () => Math.floor(container.offsetWidth / imageWidth);
     const maxIndex = () => images.length - visibleCount();
@@ -90,25 +91,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 自動輪播
     const startAutoSlide = () => {
+      if (autoSlideInterval || !isInView) return;
       autoSlideInterval = setInterval(() => {
         nextSlide();
       }, 4000);
     };
 
-    const pauseAutoSlide = () => clearInterval(autoSlideInterval);
-    const resumeAutoSlide = () => startAutoSlide();
-    const resetAutoSlide = () => {
-      pauseAutoSlide();
-      resumeAutoSlide();
+    const pauseAutoSlide = () => {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
     };
 
-    window.addEventListener('resize', updateSlide);
-    window.addEventListener('load', () => {
-      updateSlide();
+    const resumeAutoSlide = () => {
+      pauseAutoSlide();
       startAutoSlide();
+    };
+
+    const resetAutoSlide = () => {
+      pauseAutoSlide();
+      startAutoSlide();
+    };
+
+    // IntersectionObserver：偵測進入畫面
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        isInView = entry.isIntersecting;
+        if (isInView) {
+          startAutoSlide();
+        } else {
+          pauseAutoSlide();
+        }
+      });
+    }, {
+      threshold: 0.2, // 至少 20% 出現在畫面中才觸發
     });
+
+    observer.observe(container);
+
+    // 初始化
+    window.addEventListener('resize', updateSlide);
+    window.addEventListener('load', updateSlide);
   });
 });
+
 
 
 
