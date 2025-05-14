@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isTouching = false;
     let startX = 0;
-    let startTranslateX = 0;
-
+    let deltaX = 0;
     let autoSlideTimer = null;
     let isInView = false;
 
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentIndex > maxIndex) currentIndex = 0;
       if (currentIndex < 0) currentIndex = maxIndex;
 
-      track.style.transition = "transform 0.5s ease";
+      track.style.transition = "transform 0.3s ease";
       track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
     };
 
@@ -41,30 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stopAutoSlide = () => clearInterval(autoSlideTimer);
 
-    // 手機滑動事件
+    // 滑動功能（保留吸附 + 小幅滑動即可切換）
     track.addEventListener("touchstart", e => {
       isTouching = true;
       startX = e.touches[0].clientX;
-      const transform = track.style.transform || "translateX(0px)";
-      startTranslateX = parseFloat(transform.match(/-?\d+(\.\d+)?/)[0]);
+      deltaX = 0;
       track.style.transition = "none";
       stopAutoSlide();
     });
 
     track.addEventListener("touchmove", e => {
       if (!isTouching) return;
-      const deltaX = e.touches[0].clientX - startX;
-      track.style.transform = `translateX(${startTranslateX + deltaX}px)`;
+      deltaX = e.touches[0].clientX - startX;
+      track.style.transform = `translateX(${-currentIndex * imageWidth + deltaX}px)`;
     });
 
-    track.addEventListener("touchend", e => {
-      if (!isTouching) return;
-      const deltaX = e.changedTouches[0].clientX - startX;
-      const movedSlides = Math.round(- (startTranslateX + deltaX) / imageWidth);
-      currentIndex = Math.min(Math.max(movedSlides, 0), maxIndex);
-      track.style.transition = "transform 0.5s ease";
-      updateSlide();
+    track.addEventListener("touchend", () => {
       isTouching = false;
+
+      const threshold = imageWidth * 0.1; // 只要滑過10%就切
+      if (deltaX > threshold && currentIndex > 0) {
+        currentIndex--;
+      } else if (deltaX < -threshold && currentIndex < maxIndex) {
+        currentIndex++;
+      }
+
+      updateSlide();
+
       if (isInView) startAutoSlide();
     });
 
@@ -78,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       updateSlide();
     });
 
-    // 自動輪播僅在畫面中運行
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         isInView = entry.isIntersecting;
