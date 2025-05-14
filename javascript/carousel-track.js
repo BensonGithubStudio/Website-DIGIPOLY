@@ -31,13 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const startAutoSlide = () => {
-      stopAutoSlide();
-      autoSlideTimer = setInterval(() => {
-        currentIndex = (currentIndex + 1) % (maxIndex + 1);
-        updateSlide();
-      }, 3000);
+        stopAutoSlide(); // 先清除舊的
+
+        const randomTime = () => 1800 + Math.random() * 500; // 1800~2300 毫秒
+
+        const autoSlide = () => {
+            autoSlideTimer = setTimeout(() => {
+            currentIndex = (currentIndex + 1) % (maxIndex + 1);
+            updateSlide();
+            autoSlide(); // 再次啟動下一次輪播
+            }, randomTime());
     };
 
+  autoSlide();
+};
     const stopAutoSlide = () => clearInterval(autoSlideTimer);
 
     // 滑動功能（保留吸附 + 小幅滑動即可切換）
