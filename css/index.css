@@ -5,13 +5,13 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #FAF4DB;
-    transition: background 0.5s ease;
+    transition: background 0.3s ease;
 }
 
 header {
     background-color: #FAF4DB;
     color:black;
-    transition: background 0.5s ease;
+    transition: background 0.3s ease;
     text-align: center;
 }
 
@@ -132,6 +132,36 @@ footer {
     right: 10px;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.gallery-item {
+  width: calc(33.333% - 10.66px);
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.gallery-item h6 {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #c7c7c7;
+}
+
 @media (max-width: 768px) {
     h1 {
         color: #000000;
@@ -146,5 +176,9 @@ footer {
 
     .carousel-track img {
         width: 250px;        /* 每張圖片固定寬度 */
+    }
+
+    .gallery-item {
+        width: 100%;
     }
 }
