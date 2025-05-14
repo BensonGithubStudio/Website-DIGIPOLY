@@ -55,7 +55,7 @@ body.loading {
 }
 
 .loading-logo {
-    width: 75px;
+    width: 350px;
     height: auto;
     margin-bottom: 20px;
     opacity: 0;
