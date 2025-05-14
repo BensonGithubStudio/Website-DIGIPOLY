@@ -5,12 +5,25 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #FAF4DB;
+    transition: background 0.5s ease;
 }
 
 header {
     background-color: #FAF4DB;
     color:black;
+    transition: background 0.5s ease;
     text-align: center;
+}
+
+header.change-mode {
+    background-color: #f3f3f3;
+    transition: background 1s ease;
+}
+
+
+body.change-mode {
+    background-color: #f3f3f3;
+    transition: background 1s ease;
 }
 
 main {
@@ -26,7 +39,7 @@ h1 {
     color: #000000;
     letter-spacing: 5px;
     font-size: 3.5em;
-    font-weight: 1000;
+    font-weight: 700;
 }
 p {
     color: #6f6f6f;
