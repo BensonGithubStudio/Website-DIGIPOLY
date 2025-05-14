@@ -1,5 +1,5 @@
 body {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -16,13 +16,13 @@ header {
 }
 
 header.change-mode {
-    background-color: #f3f3f3;
+    background-color: #01003e;
     transition: background 1s ease;
 }
 
 
 body.change-mode {
-    background-color: #f3f3f3;
+    background-color: #01003e;
     transition: background 1s ease;
 }
 
@@ -33,7 +33,7 @@ main {
 h1, p {
     opacity: 0;
     transform: translateY(80px);
-    transition: opacity 1.5s ease, transform 1.5s ease;
+    transition: background 1s ease, opacity 1.5s ease, transform 1.5s ease, color 1.5s ease;
 }
 h1 {
     color: #000000;
@@ -51,6 +51,13 @@ h1.visible, p.visible {
     display: block;
 }
 
+body.change-mode h1{
+    color: #f3f3f3;
+}
+
+body.change-mode p{
+    color: #c7c7c7;
+}
 
 section {
     margin-top: 50px;
