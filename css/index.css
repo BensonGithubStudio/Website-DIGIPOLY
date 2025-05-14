@@ -70,7 +70,7 @@ header {
 }
 
 header.change-mode {
-    background-color: #01003e;
+    background-color: #000e3e;
     transition: background 1s ease;
 }
 
