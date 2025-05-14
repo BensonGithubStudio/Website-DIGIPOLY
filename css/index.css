@@ -42,6 +42,10 @@ body {
     transition: background 0.3s ease;
 }
 
+body.loading {
+  overflow: hidden;
+}
+
 header {
     background-color: #FAF4DB;
     color:black;
