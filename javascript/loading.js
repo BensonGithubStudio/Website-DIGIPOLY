@@ -1,3 +1,4 @@
 window.onload = function () {
-  document.body.classList.add('loaded');
+  const loading = document.getElementById('loading-screen');
+  loading.classList.add('hidden');
 };
