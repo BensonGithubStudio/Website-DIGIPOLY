@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextSlide = () => snapTo(currentIndex + 1);
     const prevSlide = () => snapTo(currentIndex - 1);
 
-    // Mouse / touch events
-    track.addEventListener("touchstart", touchStart);
-    track.addEventListener("touchmove", touchMove);
+    // 手機滑動邏輯
+    track.addEventListener("touchstart", touchStart, { passive: true });
+    track.addEventListener("touchmove", touchMove, { passive: true });
     track.addEventListener("touchend", touchEnd);
 
     function touchStart(e) {
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       track.style.transition = "none";
       cancelAnimationFrame(animationID);
       animationID = requestAnimationFrame(animation);
+      pauseAutoSlide();
     }
 
     function touchMove(e) {
@@ -73,10 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
       else if (movedBy > 50) currentIndex--;
 
       snapTo(currentIndex);
-      resetAutoSlide();
+      resumeAutoSlide();
     }
 
-    // Buttons
+    // 按鈕
     leftBtn.addEventListener('click', () => {
       prevSlide();
       resetAutoSlide();
@@ -87,16 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
       resetAutoSlide();
     });
 
-    // Auto slide
+    // 自動輪播
     const startAutoSlide = () => {
       autoSlideInterval = setInterval(() => {
         nextSlide();
       }, 4000);
     };
 
+    const pauseAutoSlide = () => clearInterval(autoSlideInterval);
+    const resumeAutoSlide = () => startAutoSlide();
     const resetAutoSlide = () => {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
+      pauseAutoSlide();
+      resumeAutoSlide();
     };
 
     window.addEventListener('resize', updateSlide);
@@ -106,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 
 
 //h1和p的文字效果
