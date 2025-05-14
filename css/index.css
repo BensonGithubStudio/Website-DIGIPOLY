@@ -1,11 +1,18 @@
 body {
+    visibility: hidden;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     background-color: #FAF4DB;
-    transition: background 0.3s ease;
+    opacity: 0;
+    transition: background 0.3s ease, opacity 0.8s ease;
+}
+
+body.loaded {
+  visibility: visible;
+  opacity: 1;
 }
 
 header {
