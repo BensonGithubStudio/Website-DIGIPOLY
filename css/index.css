@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 #loading-screen {
   position: fixed;
   top: 0;
@@ -24,6 +28,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 45px;
     display: flex;
     flex-direction: column;
     background-color: #FAF4DB;
@@ -60,6 +65,43 @@ body.loading {
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeInScale 0.8s ease-out forwards, pulse 2s ease-in-out infinite;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffffcc; /* 半透明白 */
+  backdrop-filter: blur(10px); /* 模糊效果 */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #525252;
+  font-weight: 600;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  background-color: #333;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }
 
 header {
@@ -216,6 +258,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
     h1 {
         color: #000000;
         letter-spacing: 3px;
