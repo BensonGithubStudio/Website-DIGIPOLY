@@ -74,7 +74,6 @@ header.change-mode {
     transition: background 1s ease;
 }
 
-
 body.change-mode {
     background-color: #01003e;
     transition: background 1s ease;
