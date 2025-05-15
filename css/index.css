@@ -133,9 +133,14 @@ body.change-mode .navbar {
 /* 漢堡按鈕 */
 .hamburger {
     display: none;
+    color:black;
     font-size: 1.8rem;
     cursor: pointer;
     padding-left: 1rem;
+}
+
+body.change-mode .navbar .hamburger {
+    color: white;
 }
 
 header {
@@ -294,7 +299,7 @@ footer {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-      }
+    }
 
     .navbar {
         justify-content: space-between; /* 左右漢堡和內容 */
@@ -305,7 +310,7 @@ footer {
         top: 60px; /* 預留給漢堡位置 */
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.95);
+        background: #faf4db;
         backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
@@ -313,8 +318,16 @@ footer {
         padding: 1rem 0;
     }
 
+    body.change-mode .nav-links {
+    background: #004265;
+}
+
     .nav-links.active {
         display: flex;
+    }
+
+    body {
+        padding-top: 75px;
     }
 
     h1 {
