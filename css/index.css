@@ -100,7 +100,7 @@ body.loading {
 .nav-links a {
     position: relative;
     text-decoration: none;
-    color: #333;
+    color: #929292;
     font-weight: 600;
     font-size: 1rem;
     padding: 0.3rem;
@@ -362,6 +362,11 @@ footer {
         margin-top: -25px; /* 控制圖片與 banner 的重疊程度 */
         text-align: center;
         z-index: 1;
+    }
+
+    .overlap-image {
+        width: 250px;
+        max-width: 90%;
     }
 
     body.change-mode .nav-links {
