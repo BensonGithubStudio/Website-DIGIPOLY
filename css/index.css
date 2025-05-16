@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'ChiayiFont';
-  src: url('../fonts/ChiayiCity.ttf') format('truetype');
+  src: url('../fonts/ChiayiCity.woff2') format('woff2'),
+       url('../fonts/ChiayiCity.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
