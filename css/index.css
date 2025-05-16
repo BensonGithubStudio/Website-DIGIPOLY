@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'jf open 粉圓';
-  src: url('../fonts/jf-openhuninn-2.1.ttf') format('truetype');
+  font-family: 'ChiayiFont';
+  src: url('../fonts/ChiayiCity.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +42,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-    font-family: 'jf open 粉圓', sans-serif;
+    font-family: 'ChiayiFont', sans-serif;
     margin: 0;
     padding: 0;
     padding-top: 60px;
@@ -106,8 +106,9 @@ body {
 .nav-links a {
     position: relative;
     text-decoration: none;
-    color: #929292;
-    font-weight: 600;
+    color: #858585;
+    font-weight: 550;
+    letter-spacing: 6.5px;
     font-size: 1rem;
     padding: 0.3rem;
     transition: color 0.3s ease;
@@ -225,12 +226,13 @@ h1, p {
 }
 h1 {
     color: #000000;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
     font-size: 3.5em;
     font-weight: 700;
 }
 p {
     color: #6f6f6f;
+    letter-spacing: 9px;
     font-weight: 700;
 }
 h1.visible, p.visible {
