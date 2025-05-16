@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'jf open 粉圓';
+  src: url('../fonts/jf-openhuninn-2.1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,7 +32,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'jf open 粉圓', sans-serif;
     margin: 0;
     padding: 0;
     padding-top: 60px;
@@ -151,13 +158,45 @@ header {
 }
 
 header.change-mode {
-    background-color: #01003e;
+    background-color: #000000;
     transition: background 1s ease;
 }
 
 body.change-mode {
-    background-color: #01003e;
+    background-color: #000000;
     transition: background 1s ease;
+}
+
+#banner {
+  position: relative;
+  width: 100%;
+}
+
+#banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 包住圖片與文字的容器 */
+.overlap-container {
+  position: relative;
+  margin-top: -40px; /* 控制圖片與 banner 的重疊程度 */
+  text-align: center;
+  z-index: 1;
+}
+
+/* 重疊的圖片 */
+.overlap-image {
+  width: 500px;
+  max-width: 90%;
+}
+
+/* 圖片下的文字 */
+.overlap-text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
 }
 
 main {
@@ -310,7 +349,7 @@ footer {
         top: 60px; /* 預留給漢堡位置 */
         left: 0;
         width: 100%;
-        background: #faf4db;
+        background: #f9f6e9;
         backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
@@ -318,9 +357,16 @@ footer {
         padding: 1rem 0;
     }
 
+    .overlap-container {
+        position: relative;
+        margin-top: -25px; /* 控制圖片與 banner 的重疊程度 */
+        text-align: center;
+        z-index: 1;
+    }
+
     body.change-mode .nav-links {
-    background: #004265;
-}
+        background: #004265;
+    }
 
     .nav-links.active {
         display: flex;
