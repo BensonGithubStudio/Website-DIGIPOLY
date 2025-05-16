@@ -7,8 +7,16 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: auto;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+html.loading {
+  overflow: hidden;
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 #loading-screen {
@@ -42,10 +50,6 @@ body {
     flex-direction: column;
     background-color: #FAF4DB;
     transition: background 0.3s ease;
-}
-
-body.loading {
-    overflow: hidden;
 }
 
 @keyframes fadeInScale {
