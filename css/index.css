@@ -252,12 +252,18 @@ body.change-mode p{
 section {
     margin-top: 50px;
     margin-bottom: 50px;
+    text-align: justify;
 }
 
 footer {
-    background-color:black;
+    background-color:rgb(32, 32, 32);
     color: white;
     text-align: center;
+}
+
+footer h6 {
+    font-size: 12px;
+    letter-spacing: 8px;
 }
 
 .carousel-container {
@@ -349,6 +355,7 @@ footer {
 .gallery-item h6 {
   margin-top: 8px;
   font-size: 13px;
+  letter-spacing: 7px;
   color: #c7c7c7;
 }
 
@@ -422,4 +429,9 @@ footer {
         font-size: 16px;
         color: #c7c7c7;
     }
+
+    footer h6 {
+    font-size: 7.5px;
+    letter-spacing: 8px;
+}
 }
