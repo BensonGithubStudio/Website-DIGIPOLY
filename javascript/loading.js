@@ -1,37 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-    requestAnimationFrame(() => {
-        const images = Array.from(document.images);
-        const totalImages = images.length;
-        let loadedImages = 0;
-        let revealed = false;
+  requestAnimationFrame(() => {
+    const images = Array.from(document.images);
+    const eagerImages = images.filter(img => img.loading !== "lazy");
+    const totalEager = eagerImages.length;
+    let loadedEager = 0;
+    let revealed = false;
 
-        if (totalImages === 0) {
-            revealPage();
-            return;
-        }
+    // 若沒有 eager 圖片，直接顯示
+    if (totalEager === 0) {
+      revealPage();
+      return;
+    }
 
-        function imageLoaded() {
-            loadedImages++;
-            const percent = loadedImages / totalImages;
+    function imageLoaded(img) {
+      // naturalWidth 可過濾掉錯誤或無效圖片
+      if (img.naturalWidth === 0) return;
 
-            if (!revealed && percent >= 0.4) {
-                revealPage();
-                revealed = true;
-            }
-        }
+      loadedEager++;
+      const percent = loadedEager / totalEager;
 
-        function revealPage() {
-            document.documentElement.classList.remove("loading");
-            document.getElementById("loading-screen").classList.add("hidden");
-        }
+      if (!revealed && percent >= 0.4) {
+        revealPage();
+        revealed = true;
+      }
+    }
 
-        images.forEach((img) => {
-            if (img.complete) {
-                imageLoaded();
-            } else {
-                img.addEventListener("load", imageLoaded);
-                img.addEventListener("error", imageLoaded); // 加入錯誤也計算
-            }
-        });
+    function revealPage() {
+      document.documentElement.classList.remove("loading");
+      document.getElementById("loading-screen").classList.add("hidden");
+    }
+
+    eagerImages.forEach((img) => {
+      if (img.complete) {
+        imageLoaded(img);
+      } else {
+        img.addEventListener("load", () => imageLoaded(img));
+        img.addEventListener("error", () => imageLoaded(img));
+      }
     });
+  });
 });
