@@ -374,7 +374,7 @@ footer h6 {
         top: 60px; /* 預留給漢堡位置 */
         left: 0;
         width: 100%;
-        background: #f9f6e9;
+        background: #f8f6ef;
         backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
