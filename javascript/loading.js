@@ -5,16 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let loadedImages = 0;
         let revealed = false;
 
-        // 如果沒有圖片，直接顯示畫面
         if (totalImages === 0) {
             revealPage();
             return;
         }
 
-        function imageLoaded(img) {
-            // 確保圖片有效載入（自然寬度大於 0）
-            if (img.naturalWidth === 0) return;
-
+        function imageLoaded() {
             loadedImages++;
             const percent = loadedImages / totalImages;
 
@@ -31,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         images.forEach((img) => {
             if (img.complete) {
-                imageLoaded(img);
+                imageLoaded();
             } else {
-                img.addEventListener("load", () => imageLoaded(img));
-                img.addEventListener("error", () => imageLoaded(img)); // 即使載入錯誤也算一張
+                img.addEventListener("load", imageLoaded);
+                img.addEventListener("error", imageLoaded); // 加入錯誤也計算
             }
         });
     });
