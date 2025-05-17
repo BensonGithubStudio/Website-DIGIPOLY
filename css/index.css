@@ -417,6 +417,29 @@ footer h6 {
         font-weight: 700;
     }
 
+    .highlight-scan {
+      font-size: 32px;
+      font-weight: bold;
+
+      display: inline-block;
+
+      background: linear-gradient(to right, orange 50%, black 50%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: scan 3s linear forwards;
+    }
+
+    @keyframes scan {
+      to {
+        background-position: 0 0;
+      }
+    }
+
     .carousel-track img {
         width: 250px;        /* 每張圖片固定寬度 */
     }
