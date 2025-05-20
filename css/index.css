@@ -417,6 +417,7 @@ footer h6 {
     p {
         color: #6f6f6f;
         font-weight: 700;
+        line-height: 30px;
     }
 
     .carousel-track img {
