@@ -293,7 +293,7 @@ footer h6 {
     object-fit: cover;   /* 或用 contain 根據需要 */
     margin-right: 10px;  /* 圖與圖之間有間距 */
     flex-shrink: 0;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .arrow {
