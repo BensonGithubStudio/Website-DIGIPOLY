@@ -213,6 +213,7 @@ main {
 
 main h1 {
     margin-top: 220px;
+    margin-bottom: 66px;
 }
 
 main p {
@@ -255,6 +256,17 @@ section {
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: justify;
+}
+
+section h1::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: -5px;
+    width: 500px;
+    height: 4px;
+    background-color: #999;
+    border-radius: 2px;
 }
 
 footer {
@@ -418,6 +430,17 @@ footer h6 {
         color: #6f6f6f;
         font-weight: 700;
         line-height: 30px;
+    }
+
+    section h1::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: -5px;
+        width: 350px;
+        height: 4px;
+        background-color: #999;
+        border-radius: 2px;
     }
 
     .carousel-track img {
