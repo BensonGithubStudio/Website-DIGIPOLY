@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startAutoSlide = () => {
         stopAutoSlide(); // 先清除舊的
 
-        const randomTime = () => 1800 + Math.random() * 500; // 1800~2300 毫秒
+        const randomTime = () => 2500 + Math.random() * 500; // 2200~2700 毫秒
 
         const autoSlide = () => {
             autoSlideTimer = setTimeout(() => {
@@ -80,11 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
     leftBtn.addEventListener("click", () => {
       currentIndex--;
       updateSlide();
+      if (isInView) startAutoSlide(); // 加這行：重啟計時
     });
 
     rightBtn.addEventListener("click", () => {
       currentIndex++;
       updateSlide();
+      if (isInView) startAutoSlide(); // 加這行：重啟計時
     });
 
     const observer = new IntersectionObserver(entries => {
