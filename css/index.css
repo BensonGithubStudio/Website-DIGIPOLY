@@ -215,6 +215,7 @@ body.change-mode {
 .overlap-image {
   width: 500px;
   max-width: 90%;
+  animation: sway 2.7s ease-in-out infinite;
 }
 
 /* 圖片下的文字 */
@@ -222,6 +223,14 @@ body.change-mode {
   margin-top: 10px;
   font-size: 1rem;
   color: #333;
+}
+
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3.5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3.5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 main {
