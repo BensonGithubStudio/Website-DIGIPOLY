@@ -215,7 +215,7 @@ body.change-mode {
 .overlap-image {
   width: 500px;
   max-width: 90%;
-  animation: sway 2.2s ease-in-out infinite;
+  animation: sway 3s ease-in-out infinite;
 }
 
 /* 圖片下的文字 */
@@ -226,11 +226,9 @@ body.change-mode {
 }
 
 @keyframes sway {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(3.5deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-3.5deg); }
-  100% { transform: rotate(0deg); }
+  0% { transform: rotate(-3.5deg); }
+  50% { transform: rotate(3.5deg);}
+  100% { transform: rotate(-3.5deg); }
 }
 
 main {
@@ -438,14 +436,13 @@ footer h6 {
     .overlap-image {
         width: 250px;
         max-width: 90%;
+        animation: sway 2.1s ease-in-out infinite;
     }
 
     @keyframes sway {
-        0% { transform: rotate(0deg); }
-        25% { transform: rotate(4.2deg); }
-        50% { transform: rotate(0deg); }
-        75% { transform: rotate(-4.2deg); }
-        100% { transform: rotate(0deg); }
+        0% { transform: rotate(-3.5deg); }
+        50% { transform: rotate(4.2deg); }
+        100% { transform: rotate(-4.2deg); }
     }
 
 
