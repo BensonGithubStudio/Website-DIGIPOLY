@@ -6,6 +6,15 @@
   font-style: normal;
 }
 
+h1::selection {
+    background-color: #727272;
+    color: #fff;
+}
+p::selection {
+  background-color: #acacac;
+  color: #fff;
+}
+
 html {
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
