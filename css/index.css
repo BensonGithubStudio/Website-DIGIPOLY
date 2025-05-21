@@ -18,6 +18,10 @@ h6::selection {
     background-color: #acacac;
     color: #fff;
 }
+.nav-links a::selection {
+    background-color: #555555;
+    color: #fff;
+}
 
 html {
     scroll-behavior: smooth;
