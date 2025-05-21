@@ -166,12 +166,12 @@ header {
 }
 
 header.change-mode {
-    background-color: #eaeff1;
+    background-color: #e9eced;
     transition: background 1s ease;
 }
 
 body.change-mode {
-    background-color: #eaeff1;
+    background-color: #e9eced;
     transition: background 1s ease;
 }
 
