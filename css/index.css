@@ -440,7 +440,7 @@ footer h6 {
     }
 
     @keyframes sway {
-        0% { transform: rotate(-3.5deg); }
+        0% { transform: rotate(-4.2deg); }
         50% { transform: rotate(4.2deg); }
         100% { transform: rotate(-4.2deg); }
     }
