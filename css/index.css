@@ -14,6 +14,10 @@ p::selection {
   background-color: #acacac;
   color: #fff;
 }
+h6::selection {
+    background-color: #acacac;
+    color: #fff;
+}
 
 html {
     scroll-behavior: smooth;
