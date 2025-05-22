@@ -307,33 +307,35 @@ section h1.visible::after {
 
 .floating-image-right {
     position: absolute;
-    right: -150px;
+    right: 0px;
     top: 0;
     opacity: 0;
     transform: translateX(0);
     transition: transform 1.5s ease, opacity 1.5s ease;
+    transition-delay: 1s;
     max-width: 300px;
     z-index: 0;
 }
 
 .floating-image-right.visible {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     opacity: 1;
 }
 
 .floating-image-left {
     position: absolute;
-    left: -150px;
+    left: 0px;
     top: 0;
     opacity: 0;
     transform: translateX(0);
     transition: transform 1.5s ease, opacity 1.5s ease;
+    transition-delay: 1.2s;
     max-width: 300px;
     z-index: 0;
 }
 
 .floating-image-left.visible {
-    transform: translateX(100%);
+    transform: translateX(50%);
     opacity: 1;
 }
 
@@ -511,7 +513,23 @@ footer h6 {
     .floating-image-container {
         position: relative;
         overflow: none;
-        height: 150px;
+        height: 130px;
+    }
+
+    .floating-image-left {
+        max-width: 200px;
+    }
+    .floating-image-left.visible {
+        transform: translateX(20%);
+        opacity: 1;
+    }
+
+    .floating-image-right {
+        max-width: 200px;
+    }
+    .floating-image-right.visible {
+        transform: translateX(-20%);
+        opacity: 1;
     }
 
     section h1.visible::after {
