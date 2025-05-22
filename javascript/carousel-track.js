@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startAutoSlide = () => {
         stopAutoSlide(); // 先清除舊的
 
-        const randomTime = () => 2500 + Math.random() * 500; // 2200~2700 毫秒
+        const randomTime = () => 1800 + Math.random() * 500; // 1800~2300 毫秒
 
         const autoSlide = () => {
             autoSlideTimer = setTimeout(() => {

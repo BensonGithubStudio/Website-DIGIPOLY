@@ -312,7 +312,6 @@ section h1.visible::after {
     opacity: 0;
     transform: translateX(0);
     transition: transform 1.5s ease, opacity 1.5s ease;
-    transition-delay: 1s;
     max-width: 300px;
     z-index: 0;
 }
@@ -329,7 +328,6 @@ section h1.visible::after {
     opacity: 0;
     transform: translateX(0);
     transition: transform 1.5s ease, opacity 1.5s ease;
-    transition-delay: 1.2s;
     max-width: 300px;
     z-index: 0;
 }
