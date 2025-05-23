@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalImages = images.length;
         let loadedImages = 0;
         let revealed = false;
-        const minLoadingTime = 800; // 最少顯示 0.8 秒
+        const minLoadingTime = 3500; // 最少顯示 0.8 秒
         const startTime = Date.now();
 
         if (totalImages === 0) {
