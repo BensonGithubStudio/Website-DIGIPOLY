@@ -337,6 +337,13 @@ section h1.visible::after {
     opacity: 1;
 }
 
+.particle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 footer {
     background-color:rgb(32, 32, 32);
     color: white;
