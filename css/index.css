@@ -337,11 +337,28 @@ section h1.visible::after {
     opacity: 1;
 }
 
+.screen-blackout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+    z-index: 9998;
+    pointer-events: all;
+    transition: opacity 500ms ease;
+}
+
+  .screen-blackout.show {
+    opacity: 1;
+  }
+
 .particle {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
 }
 
 footer {
