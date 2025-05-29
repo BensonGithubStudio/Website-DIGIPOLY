@@ -50,6 +50,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".typewriter");
+
+  const timers = new Map(); // 用來儲存每個元素的計時器
+
+  const typeText = (el, text) => {
+    clearInterval(timers.get(el)); // 清除舊的計時器
+    el.textContent = "";
+    let index = 0;
+
+    const interval = setInterval(() => {
+      el.textContent += text.charAt(index);
+      index++;
+      if (index > text.length) {
+        clearInterval(interval);
+        el.style.borderRight = "none";
+      }
+    }, 50);
+
+    timers.set(el, interval); // 儲存計時器
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      const fullText = el.dataset.fulltext;
+
+      if (entry.isIntersecting) {
+        typeText(el, fullText);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  elements.forEach(el => {
+    el.dataset.fulltext = el.textContent;
+    el.textContent = " "; // 預設留一個空白佔位
+    observer.observe(el);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.floating-image-container').forEach(container => {
     const imageLeft = container.querySelector('.floating-image-left');
     const imageRight = container.querySelector('.floating-image-right');

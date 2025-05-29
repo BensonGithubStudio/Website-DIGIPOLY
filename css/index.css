@@ -387,6 +387,10 @@ h1.visible, p.visible {
     display: block;
 }
 
+.typewriter {
+  min-height: 12em;
+}
+
 body.change-mode h1{
     color: #3d3d3d;
 }
@@ -652,6 +656,10 @@ footer h6 {
         color: #6f6f6f;
         font-weight: 700;
         line-height: 30px;
+    }
+
+    .typewriter {
+      min-height: 20em;
     }
 
     .floating-image-container {
