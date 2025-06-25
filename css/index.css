@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'ChiayiFont';
-  src: url('../fonts/ChiayiCity.woff2') format('woff2'),
-       url('../fonts/ChiayiCity.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'ChiayiFont';
+    src: url('../fonts/ChiayiCity.woff2') format('woff2'),
+          url('../fonts/ChiayiCity.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1::selection {
@@ -11,8 +11,8 @@ h1::selection {
     color: #fff;
 }
 p::selection {
-  background-color: #acacac;
-  color: #fff;
+    background-color: #acacac;
+    color: #fff;
 }
 h6::selection {
     background-color: #acacac;
@@ -31,11 +31,11 @@ html {
 }
 
 html.loading {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 html::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+    display: none; /* Chrome, Safari */
 }
 
 #loading-screen {
@@ -56,8 +56,8 @@ html::-webkit-scrollbar {
 }
 
 #loading-screen.hidden {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 body {
@@ -74,132 +74,132 @@ body {
 /******************************************************************************************/
 
 @keyframes frostBreak {
-  0% {
-    transform: scale(0.8) rotate(0deg);
-    opacity: 0;
-    filter: grayscale(1) blur(10px) brightness(200%) contrast(300%);
-  }
-  30% {
-    transform: scale(1.3) rotate(10deg);
-    filter: hue-rotate(180deg) brightness(150%);
-  }
-  60% {
-    transform: scale(0.9) rotate(-5deg);
-    filter: none;
-  }
-  100% {
-    transform: scale(1) rotate(0);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0;
+        filter: grayscale(1) blur(10px) brightness(200%) contrast(300%);
+    }
+    30% {
+        transform: scale(1.3) rotate(10deg);
+        filter: hue-rotate(180deg) brightness(150%);
+    }
+    60% {
+        transform: scale(0.9) rotate(-5deg);
+        filter: none;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
 }
 
 @keyframes lavaBurst {
-  0% {
-    transform: scale(0.4) rotate(-180deg);
-    filter: blur(20px) sepia(1) brightness(250%);
-    opacity: 0;
-  }
-  30% {
-    transform: scale(1.5) rotate(30deg);
-    filter: hue-rotate(50deg) brightness(180%);
-    opacity: 1;
-  }
-  60% {
-    transform: scale(0.95) rotate(-10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    filter: none;
-  }
+    0% {
+        transform: scale(0.4) rotate(-180deg);
+        filter: blur(20px) sepia(1) brightness(250%);
+        opacity: 0;
+    }
+    30% {
+        transform: scale(1.5) rotate(30deg);
+        filter: hue-rotate(50deg) brightness(180%);
+        opacity: 1;
+    }
+    60% {
+        nsform: scale(0.95) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: none;
+    }
 }
 
 @keyframes electricZap {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-    filter: brightness(200%) saturate(4);
-  }
-  20%, 40%, 60%, 80% {
-    transform: scale(1.05) rotate(2deg);
-    filter: drop-shadow(0 0 20px #0ff);
-  }
-  30%, 50%, 70% {
-    transform: scale(0.95) rotate(-2deg);
-    filter: drop-shadow(0 0 30px #f0f);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    filter: none;
-  }
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+        filter: brightness(200%) saturate(4);
+    }
+    20%, 40%, 60%, 80% {
+        transform: scale(1.05) rotate(2deg);
+        filter: drop-shadow(0 0 20px #0ff);
+    }
+    30%, 50%, 70% {
+        transform: scale(0.95) rotate(-2deg);
+        filter: drop-shadow(0 0 30px #f0f);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: none;
+    }
 }
 
 @keyframes rainbowPulse {
-  0% {
-    transform: scale(0.6);
-    filter: hue-rotate(0deg) drop-shadow(0 0 10px #f0f);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.3);
-    filter: hue-rotate(180deg) drop-shadow(0 0 30px #0ff);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    filter: hue-rotate(360deg) drop-shadow(0 0 20px #ff0);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(0.6);
+        filter: hue-rotate(0deg) drop-shadow(0 0 10px #f0f);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.3);
+        filter: hue-rotate(180deg) drop-shadow(0 0 30px #0ff);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        filter: hue-rotate(360deg) drop-shadow(0 0 20px #ff0);
+        opacity: 1;
+    }
 }
 
 @keyframes wormhole {
-  0% {
-    transform: scale(0) rotate(0deg);
-    opacity: 0;
-    filter: blur(50px) contrast(500%) brightness(200%);
-  }
-  50% {
-    transform: scale(1.5) rotate(360deg);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1) rotate(720deg);
-    filter: none;
-    opacity: 1;
-  }
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+        filter: blur(50px) contrast(500%) brightness(200%);
+    }
+    50% {
+        transform: scale(1.5) rotate(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(720deg);
+        filter: none;
+        opacity: 1;
+    }
 }
 
 @keyframes hyperEntrance {
-  0% {
-    opacity: 0;
-    transform: scale(0.2) rotate(0deg);
-    filter: blur(20px) hue-rotate(0deg) brightness(200%) drop-shadow(0 0 50px #00ffff);;
-  }
-  30% {
-    transform: scale(1.4) rotate(180deg);
-    filter: blur(5px) hue-rotate(180deg) brightness(150%) drop-shadow(0 0 15px #ff00fb);;
-  }
-  60% {
-    transform: scale(0.9) rotate(270deg);
-    filter: blur(2px) hue-rotate(270deg) brightness(120%) drop-shadow(0 0 50px #f2ff00);;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(360deg);
-    filter: blur(0px) hue-rotate(360deg) brightness(100%) drop-shadow(0 0 15px #ff2f00);;
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(0deg);
+        filter: blur(20px) hue-rotate(0deg) brightness(200%) drop-shadow(0 0 50px #00ffff);;
+    }
+    30% {
+        transform: scale(1.4) rotate(180deg);
+        filter: blur(5px) hue-rotate(180deg) brightness(150%) drop-shadow(0 0 15px #ff00fb);;
+    }
+    60% {
+        transform: scale(0.9) rotate(270deg);
+        filter: blur(2px) hue-rotate(270deg) brightness(120%) drop-shadow(0 0 50px #f2ff00);;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+        filter: blur(0px) hue-rotate(360deg) brightness(100%) drop-shadow(0 0 15px #ff2f00);;
+    }
 }
 
 @keyframes cosmicPulse {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 10px #00ffff);
-  }
-  50% {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 40px #ff00ff) hue-rotate(45deg);
-  }
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px #00ffff);
+    }
+    50% {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 40px #ff00ff) hue-rotate(45deg);
+    }
 }
 
 .loading-logo {
@@ -217,20 +217,19 @@ body {
 
 /******************************************************************************************/
 
-/* 導覽列樣式 */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  backdrop-filter: blur(8px);
-  background: #faf4dba3;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  padding: 1rem 0.5rem; /* 加 padding 預留空間 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    background: #faf4dba3;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-links {
@@ -281,7 +280,6 @@ body.change-mode .navbar {
     box-shadow: 0 2px 10px rgba(67, 67, 67, 0.1);
 }
 
-/* 漢堡按鈕 */
 .hamburger {
     display: none;
     color:black;
@@ -312,42 +310,39 @@ body.change-mode {
 }
 
 #banner {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 #banner img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-/* 包住圖片與文字的容器 */
 .overlap-container {
-  position: relative;
-  margin-top: -40px; /* 控制圖片與 banner 的重疊程度 */
-  text-align: center;
-  z-index: 1;
+    position: relative;
+    margin-top: -40px;
+    text-align: center;
+    z-index: 1;
 }
 
-/* 重疊的圖片 */
 .overlap-image {
-  width: 500px;
-  max-width: 90%;
-  animation: sway 3s ease-in-out infinite;
+    width: 500px;
+    max-width: 90%;
+    animation: sway 3s ease-in-out infinite;
 }
 
-/* 圖片下的文字 */
 .overlap-text {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #333;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
 }
 
 @keyframes sway {
-  0% { transform: rotate(-3.5deg); }
-  50% { transform: rotate(3.5deg);}
-  100% { transform: rotate(-3.5deg); }
+    0% { transform: rotate(-3.5deg); }
+    50% { transform: rotate(3.5deg);}
+    100% { transform: rotate(-3.5deg); }
 }
 
 main {
@@ -388,7 +383,7 @@ h1.visible, p.visible {
 }
 
 .typewriter {
-  min-height: 12em;
+    min-height: 12em;
 }
 
 body.change-mode h1{
@@ -423,7 +418,7 @@ section h1::after {
 }
 
 section h1.visible::after {
-  width: 500px; /* 滑動展開到 500px */
+    width: 500px;
 }
 
 .floating-image-container {
@@ -476,9 +471,9 @@ section h1.visible::after {
     transition: opacity 500ms ease;
 }
 
-  .screen-blackout.show {
+.screen-blackout.show {
     opacity: 1;
-  }
+}
 
 .particle {
     position: fixed;
@@ -499,9 +494,9 @@ footer h6 {
 }
 
 footer a {
-  margin: 10px;
-  margin-bottom: 50px;
-  color: white;
+    margin: 10px;
+    margin-bottom: 50px;
+    color: white;
 }
 
 .carousel-container {
@@ -512,29 +507,29 @@ footer a {
 }
 
 .carousel-track {
-  display: flex;
-  transition: transform 0.3s ease;
-  will-change: transform;
-  width: max-content; /* ✅ 確保寬度可自動延伸 */
-  touch-action: pan-y; /* ✅ 允許水平滑動 */
+    display: flex;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    width: max-content;
+    touch-action: pan-y; /* 允許水平滑動 */
 }
 
 [data-carousel] {
-  overflow: hidden;
-  position: relative;
+    overflow: hidden;
+    position: relative;
 }
 
 .carousel-track img {
-    width: 500px;        /* 每張圖片固定寬度 */
-    height: auto;        /* 高度自動保持比例 */
-    object-fit: cover;   /* 或用 contain 根據需要 */
-    margin-right: 10px;  /* 圖與圖之間有間距 */
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 10px;
     flex-shrink: 0;
     border-radius: 15px;
 }
 
 .arrow {
-    all: unset; /* 清除 button 預設樣式 */
+    all: unset;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -568,34 +563,34 @@ footer a {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
 }
 
 .gallery-item {
-  width: calc(33.333% - 10.66px);
-  text-align: center;
+    width: calc(33.333% - 10.66px);
+    text-align: center;
 }
 
 .gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .gallery-item h6 {
-  margin-top: 8px;
-  font-size: 13px;
-  letter-spacing: 7px;
-  color: #757575;
+    margin-top: 8px;
+    font-size: 13px;
+    letter-spacing: 7px;
+    color: #757575;
 }
 
 @media (max-width: 768px) {
@@ -608,12 +603,12 @@ footer a {
     }
 
     .navbar {
-        justify-content: space-between; /* 左右漢堡和內容 */
+        justify-content: space-between;
     }
 
     .nav-links {
         position: fixed;
-        top: 60px; /* 預留給漢堡位置 */
+        top: 60px;
         left: 0;
         width: 100%;
         background: #f8f6ef;
@@ -626,7 +621,7 @@ footer a {
 
     .overlap-container {
         position: relative;
-        margin-top: -25px; /* 控制圖片與 banner 的重疊程度 */
+        margin-top: -25px;
         text-align: center;
         z-index: 1;
     }
@@ -669,7 +664,7 @@ footer a {
     }
 
     .typewriter {
-      min-height: 20em;
+        min-height: 20em;
     }
 
     .floating-image-container {
@@ -704,7 +699,7 @@ footer a {
     }
 
     .carousel-track img {
-        width: 250px;        /* 每張圖片固定寬度 */
+        width: 250px;
     }
 
     .gallery-item {

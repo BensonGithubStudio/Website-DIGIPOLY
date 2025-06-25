@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     function getRandomColor() {
-      const colors = ['#FFD700', '#FF69B4', '#00FFFF', '#ADFF2F', '#FF4500'];
-      return colors[Math.floor(Math.random() * colors.length)];
+        const colors = ['#FFD700', '#FF69B4', '#00FFFF', '#ADFF2F', '#FF4500'];
+        return colors[Math.floor(Math.random() * colors.length)];
     }
 
     function createParticles(originElement) {
@@ -9,12 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const originX = rect.left + rect.width / 2;
         const originY = rect.top + rect.height / 2;
 
-        // 建立黑幕元素
         const blackout = document.createElement('div');
         blackout.classList.add('screen-blackout');
         document.body.appendChild(blackout);
 
-        // 強制觸發 reflow，再加上 show 類別讓它淡入
         requestAnimationFrame(() => {
             blackout.classList.add('show');
         });
@@ -42,26 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(particle);
 
             requestAnimationFrame(() => {
-            particle.style.transform = `translate(${dx}px, ${dy}px)`;
-            particle.style.opacity = 0;
+                particle.style.transform = `translate(${dx}px, ${dy}px)`;
+                particle.style.opacity = 0;
             });
 
             setTimeout(() => {
-            particle.remove();
+                particle.remove();
             }, duration);
         }
 
-        // 粒子完成後淡出黑幕再移除
         setTimeout(() => {
-            blackout.classList.remove('show'); // 淡出
-            setTimeout(() => blackout.remove(), 300); // 等淡出結束後移除
+            blackout.classList.remove('show');
+            setTimeout(() => blackout.remove(), 300);
         }, longestDuration + 100);
     }
 
-
     document.querySelectorAll('.clickable-particle').forEach(img => {
-      img.addEventListener('click', () => {
-        createParticles(img);
-      });
+        img.addEventListener('click', () => {
+            createParticles(img);
+        });
     });
 });
