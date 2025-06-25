@@ -361,7 +361,7 @@ main p {
 
 h1, p {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(110px);
     transition: background 1s ease, opacity 1.5s ease, transform 1.5s ease, color 1.5s ease;
 }
 h1 {
@@ -378,7 +378,7 @@ p {
 }
 h1.visible, p.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(30px);
     display: block;
 }
 
