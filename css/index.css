@@ -432,7 +432,7 @@ section h1.visible::after {
     right: 0px;
     top: 0;
     opacity: 0;
-    transform: scale(0.2) rotate(720deg) translateX(0);
+    transform: scale(0.2) rotate(360deg) translateX(0);
     transition: 0;
     max-width: 300px;
     z-index: 0;
@@ -445,7 +445,7 @@ section h1.visible::after {
 
 @keyframes JumpInLeft {
     0% {
-        transform: scale(0.2) rotate(720deg) translateX(100%);
+        transform: scale(0.2) rotate(360deg) translateX(100%);
         opacity: 0;
     }
     50% {
@@ -468,7 +468,7 @@ section h1.visible::after {
     left: 0px;
     top: 0;
     opacity: 0;
-    transform: scale(0.2) rotate(-720deg) translateX(100%);
+    transform: scale(0.2) rotate(-360deg) translateX(100%);
     transition: 0;
     max-width: 300px;
     z-index: 0;
@@ -481,7 +481,7 @@ section h1.visible::after {
 
 @keyframes JumpInRight {
     0% {
-        transform: scale(0.2) rotate(-720deg) translateX(-100%);
+        transform: scale(0.2) rotate(-360deg) translateX(-100%);
         opacity: 0;
     }
     50% {
@@ -527,6 +527,7 @@ footer {
     background-color:rgb(32, 32, 32);
     color: white;
     text-align: center;
+    padding-bottom: 15px;
 }
 
 footer h6 {
@@ -729,7 +730,7 @@ footer a {
 
     @keyframes JumpInRight {
         0% {
-            transform: scale(0.2) rotate(720deg) translateX(-100%);
+            transform: scale(0.2) rotate(360deg) translateX(-100%);
             opacity: 0;
         }
         50% {
@@ -757,7 +758,7 @@ footer a {
 
     @keyframes JumpInLeft {
         0% {
-            transform: scale(0.2) rotate(720deg) translateX(100%);
+            transform: scale(0.2) rotate(360deg) translateX(100%);
             opacity: 0;
         }
         50% {
