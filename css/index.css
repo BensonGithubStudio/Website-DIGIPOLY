@@ -622,12 +622,13 @@ footer a {
     height: auto;
     border: 5.2px solid #dbdbdb;
     border-radius: 15px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.55s ease;
     box-sizing: border-box;
 }
 
 .gallery-item img:hover {
     transform: scale(1.1);
+        border: 5.2px solid #b4b4b4;
 }
 
 .gallery-item h6 {
