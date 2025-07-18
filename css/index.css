@@ -384,12 +384,12 @@ h1.visible, p.visible {
 }
 
 .big-title-blue {
-    color: rgb(0, 58, 150);
-    font-size: 1.2em;
+    color: rgb(0, 110, 169);
+    font-size: 1.3em;
 }
 .big-title-red {
-    color: rgb(160, 0, 0);
-    font-size: 1.2em;
+    color: rgb(188, 14, 14);
+    font-size: 1.3em;
 }
 
 .typewriter {
