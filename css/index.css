@@ -383,6 +383,15 @@ h1.visible, p.visible {
     display: block;
 }
 
+.big-title-blue {
+    color: rgb(0, 58, 150);
+    font-size: 1.2em;
+}
+.big-title-red {
+    color: rgb(160, 0, 0);
+    font-size: 1.2em;
+}
+
 .typewriter {
     min-height: 12em;
 }
