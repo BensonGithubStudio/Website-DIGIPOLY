@@ -392,6 +392,14 @@ h1.visible, p.visible {
     font-size: 1.35em;
 }
 
+.title-gradient {
+    background: linear-gradient(to right, rgb(166, 120, 200), rgb(134, 131, 199), rgb(110, 140, 196), rgb(105, 146, 142), rgb(99, 153, 74));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
 .typewriter {
     min-height: 12em;
 }
