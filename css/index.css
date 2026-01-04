@@ -645,7 +645,7 @@ footer a {
 
 .gallery-item img:hover {
     transform: scale(1.1);
-        border: 5.2px solid #b4b4b4;
+    border: 5.2px solid #b4b4b4;
 }
 
 .gallery-item h6 {
@@ -806,7 +806,7 @@ footer a {
     }
 
     section {
-        padding: 25px;
+        padding: 15px;
         padding-top: 0;
     }
 
@@ -816,6 +816,10 @@ footer a {
 
     .carousel-track img {
         width: 250px;
+    }
+
+    .gallery {
+        padding: 0px;
     }
 
     .gallery-item {
